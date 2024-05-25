@@ -1,0 +1,4 @@
+<%#= line_chart Project.group(:created_at).count %>
+<%= line_chart Project.all.map { |proj|
+    {name: proj.title, data: proj.start_date}
+} %>

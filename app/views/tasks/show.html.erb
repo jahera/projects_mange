@@ -1,0 +1,24 @@
+<h1>Task: <%= @task.title %></h1>
+
+<p>
+  <strong>Description:</strong>
+  <%= @task.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @task.status %>
+</p>
+
+<p>
+  <strong>Story Point:</strong>
+  <%= @task.story_point %>
+</p>
+
+<p>
+  <strong>Assigned To:</strong>
+  <%= @task.assigned_to.email if @task.assigned_to %>
+</p>
+
+<%= link_to 'Edit', edit_project_task_path(@project, @task) %> |
+<%= link_to 'Back', project_tasks_path(@project) %>

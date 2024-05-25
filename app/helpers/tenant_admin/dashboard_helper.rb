@@ -1,0 +1,2 @@
+module TenantAdmin::DashboardHelper
+end

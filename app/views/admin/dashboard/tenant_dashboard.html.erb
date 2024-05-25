@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>Tenant Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tenants.each do |tenant| %>
+      <tr>
+        <td><%= tenant.name %></td>
+        <td>
+          <%= link_to 'Manage', tenant_admin_dashboard_path(id: tenant) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

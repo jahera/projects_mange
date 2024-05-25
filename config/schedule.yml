@@ -1,0 +1,6 @@
+assignment_reminder_job:
+  # cron: "0 0 * * *" # Runs every day at midnight
+  cron: '*/1 * * * *'
+  class: "TaskAssignmentReminderJob"
+  queue: "mailers"
+  description: "Send daily reminder emails for assignments due today"

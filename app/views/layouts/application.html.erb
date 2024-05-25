@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Promanage</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+  </head>
+
+  <body>
+  <% if user_signed_in? %>
+    <%= link_to "Logout ttttt", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, data: { turbo: false } %>
+
+  <% end %>
+
+  <%- if !user_signed_in? %>
+    <%= link_to "Log in", new_user_session_path(:user) %><br />
+    <%= link_to "Sign Up", new_user_registration_path %><br />
+  <% end %>
+
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= yield %>
+  </body>
+</html>
