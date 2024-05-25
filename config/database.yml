@@ -19,8 +19,4 @@ test:
 
 production:
   <<: *default
-  database: promanage_production
-  host: 127.0.0.1
-  username: postgres
-  password: postgres#2023
-  port: 5432
+  url: <%= ENV['DATABASE_URL'] %>
