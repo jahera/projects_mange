@@ -2,20 +2,21 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: postgres
-  password: postgres#2023
 
 development:
   <<: *default
   database: promanage_development
   host: localhost
+  username: postgres
+  password: postgres#2023
 
 test:
   <<: *default
   database: promanage_test
   host: localhost
+  username: postgres
+  password: postgres#2023
 
 production:
   <<: *default
-  database: promanage_production
-  
+  url: <%= ENV['DATABASE_URL'] %>
