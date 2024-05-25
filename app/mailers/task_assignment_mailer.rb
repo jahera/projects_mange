@@ -1,6 +1,6 @@
 class TaskAssignmentMailer < ApplicationMailer
 
-  default from: 'notifications@example.com'
+  default from: 'payelmlk4ux@gmail.com'
 
   def assignment_reminder(user, assignment)
     @user = user
