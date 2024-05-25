@@ -20,6 +20,7 @@ test:
 production:
   <<: *default
   database: promanage_production
-  host: localhost
+  host: 127.0.0.1
   username: postgres
   password: postgres#2023
+  port: 5432
