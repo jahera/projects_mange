@@ -15,7 +15,7 @@
 
 	user_roles = [
 	  { role_type: 'admin' },
-	  { role_type: 'project_manager' },
+	  { role_type: 'project_manager' }
 	  { role_type: 'team_member' }
 	  { role_type: 'tenant_admin' }
 	]
