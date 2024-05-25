@@ -17,8 +17,9 @@ test:
   username: postgres
   password: postgres#2023
 
-# production:
-#   <<: *default
-#   database: pro_manage_production
-#   username: pro_manage
-#   password: <%= ENV["PRO_MANAGE_DATABASE_PASSWORD"] %>
+production:
+  <<: *default
+  database: promanage_production
+  host: localhost
+  username: postgres
+  password: postgres#2023
