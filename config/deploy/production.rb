@@ -1,5 +1,5 @@
 
-server 'your_server_ip', user: 'deploy', roles: %w{app db web}
+# server 'your_server_ip', user: 'deploy', roles: %w{app db web}
 
 set :ssh_options, {
   forward_agent: true,
