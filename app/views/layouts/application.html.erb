@@ -12,10 +12,10 @@
   </head>
 
   <body>
+  
   <% if user_signed_in? %>
-    <%= link_to "Logout ttttt", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, data: { turbo: false } %>
-
+    <p> Current BD   : <%= current_user.tenant_id ? Apartment::Tenant.current : 'public' %> </p>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
   <% end %>
 
   <%- if !user_signed_in? %>

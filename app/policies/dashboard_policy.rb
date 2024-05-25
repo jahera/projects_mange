@@ -1,6 +1,6 @@
 class DashboardPolicy < ApplicationPolicy
   def index?
-    user.has_role?('admin') || user.has_role?('tenant_admin')
+    user.has_role?('admin')
   end
 
   def tenant_dashboard?

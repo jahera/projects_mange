@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects or /projects.json
   def index
-    @projects = policy_scope(Project)
+    @projects = Project.all
   end
 
   # GET /projects/1 or /p@projects = policy_scope(Project)rojects/1.json
