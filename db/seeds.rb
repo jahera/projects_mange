@@ -22,7 +22,7 @@
 
 	# Create user roles associated with the current tenant
 	user_roles.each do |role_attrs|
-		user_role = UserRole.find_or_initialize_by_field(role_attrs)
+		user_role = UserRole.where(role_attrs).first_or_initialize
 	  user_role.save
 	end
 
