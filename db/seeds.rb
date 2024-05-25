@@ -15,14 +15,15 @@
 
 	user_roles = [
 	  { role_type: 'admin' },
-	  { role_type: 'project_manager' }
-	  { role_type: 'team_member' }
+	  { role_type: 'project_manager' },
+	  { role_type: 'team_member' },
 	  { role_type: 'tenant_admin' }
 	]
 
 	# Create user roles associated with the current tenant
 	user_roles.each do |role_attrs|
-	  UserRole.create!(role_attrs)
+		user_role = UserRole.find_or_initialize_by_field(role_attrs)
+	  user_role.save
 	end
 
 User.create!(user_role_id: UserRole.last.id, email: "jaherasuper@gmail.com", first_name: "Super", last_name: "Admin", password: "123456")
