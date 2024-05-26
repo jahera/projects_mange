@@ -28,7 +28,13 @@ class TasksController < ApplicationController
     authorize @task
     
     if @task.save
-      redirect_to [@project, @task], notice: 'Task was successfully created.'
+      ActionCable.server.broadcast(
+        "user_#{@task.assigned_to_id}_notifications",
+        { message: "New task assigned to you: #{@task.title}" }
+      )
+      
+      # ActionCable.server.broadcast("user_#{@task.assigned_to_id}_notifications", message: "New task created: #{@task.title}")
+      redirect_to [@project, @task], notice: 'Task @task.assignee_id successfully created.'
     else
       render :new
     end
