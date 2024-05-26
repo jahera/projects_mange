@@ -3,8 +3,8 @@
 <%= render @project %>
 
 <div>
-  <%= link_to "Edit this project", edit_project_path(@project) %> |
-  <%= link_to "Back to projects", projects_path %>
-  <%= link_to "task", project_tasks_path(@project) %>
-  <%= button_to "Destroy this project", @project, method: :delete %>
+  <%= link_to "Edit this project", edit_project_path(@project), class: "link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" %> |
+  <%= link_to "Back to projects", projects_path, class: "link-offset-2 link-underline link-underline-opacity-0" %> | 
+  <%= link_to "task", project_tasks_path(@project), class: "link-offset-2 link-underline link-underline-opacity-1" %> |
+  <%= link_to "Destroy this project", @project, method: :delete, class: "link-offset-2 link-underline link-underline-opacity-0nav-link" %>
 </div>
