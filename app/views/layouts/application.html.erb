@@ -19,11 +19,14 @@
       </button>
       <div class="collapse navbar-collapse" id="mainNavbar">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <% if user_signed_in? %>
-                <%= button_to 'Logout', destroy_user_session_path, method: :delete, data: { turbo: :false }%>
-              <% end %>
-          </li>
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= button_to 'Logout', destroy_user_session_path, method: :delete, data: { turbo: :false }%>
+            </li>&nbsp; &nbsp; &nbsp;
+            <li class="nav-item">
+              <%= link_to "Reports", admin_reports_path, class: "link-info" %>
+            </li>
+          <% end %>
           
           <%- unless user_signed_in? %>
             <li class="nav-item">

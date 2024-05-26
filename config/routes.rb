@@ -13,7 +13,8 @@ Rails.application.routes.draw do
     root "dashboard#index"
     get "dashboard", to: "dashboard#tenant_dashboard" 
     resources :users, only: %i[new create index]
-    resources :reports
+    resources :tenants, only: %i[new create show]
+    resources :reports, only: %i[index]
   end
 
   namespace :tenant_admin do

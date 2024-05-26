@@ -2,3 +2,144 @@
 <%= line_chart Project.all.map { |proj|
     {name: proj.title, data: proj.start_date}
 } %>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Project Analytics</h5>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Total Story Points</th>
+                  <th scope="col">Average Task Completion Time (days)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @projects.each do |project| %>
+                  <tr>
+                    <td><%= project.title %></td>
+                    <td><%= project.status %></td>
+                    <td><%= project.total_story_points %></td>
+                    <td><%= project.average_task_completion_time %></td>
+                  </tr>
+                <% end %>
+                <!-- Add more rows as needed -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Completed Projects</h5>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Total Story Points</th>
+                  <th scope="col">Average Task Completion Time (days)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @completed_projects.each do |project| %>
+                  <tr>
+                    <td><%= project.title %></td>
+                    <td><%= project.status %></td>
+                    <td><%= project.total_story_points %></td>
+                    <td><%= project.average_task_completion_time %></td>
+                  </tr>
+                <% end %>
+                <!-- Add more rows as needed -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Ongoing Projects</h5>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Total Story Points</th>
+                  <th scope="col">Average Task Completion Time (days)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @ongoing_projects.each do |project| %>
+                  <tr>
+                    <td><%= project.title %></td>
+                    <td><%= project.status %></td>
+                    <td><%= project.total_story_points %></td>
+                    <td><%= project.average_task_completion_time %></td>
+                  </tr>
+                <% end %>
+                <!-- Add more rows as needed -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Analytics for Task</h5>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Story Points</th>
+                  <th scope="col">Duration (days)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @tasks.each do |task| %>
+                  <tr>
+                    <td><%= task.title %></td>
+                    <td><%= task.status %></td>
+                    <td><%= task.story_point %></td>
+                    <td><%= task.duration %></td>
+                  </tr>
+                <% end %>
+                <!-- Add more rows as needed -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
