@@ -1,8 +1,13 @@
 class TenantAdmin::DashboardController < ApplicationController
-  before_action :authenticate_user!
+    before_action :authenticate_user!
     # before_action :authorize_tenant_admin
     before_action :set_tenant
     before_action :switch_tenant
+
+    def index
+      @tenants = Tenant.all
+      authorize @tenants
+    end
 
     def users_list
       @users = @tenant.users

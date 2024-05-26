@@ -1,0 +1,2 @@
+module TenantAdmin::TenantsHelper
+end

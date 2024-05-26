@@ -26,18 +26,6 @@ class User < ApplicationRecord
     tenant = Tenant.create!(name: org_name)
     self.tenant_id = tenant.id
     self.save!
-    Apartment::Tenant.create(tenant.name)
-    # Apartment::Tenant.switch!(tenant.name) do
-    #   self.save
-    # end
-
-
-
-    Apartment::Tenant.switch!(tenant.name) do
-      ActiveRecord::Migrator.migrations_paths.each do |path|
-        ActiveRecord::Base.connection.migration_context.migrate
-      end
-    end
   end
 
   # def has_role?(role)

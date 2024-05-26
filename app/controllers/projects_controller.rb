@@ -27,7 +27,9 @@ class ProjectsController < ApplicationController
     Rails.logger.info "Current schema after switch:====================== #{ActiveRecord::Base.connection.current_schema}"
     Rails.logger.info "User.connection.schema_search_path:====================== #{User.connection.schema_search_path}"
 
-    @project = current_user.projects.new(project_params)
+    @user =  project_params[:user_id] ? User.find( project_params[:user_id]) : current_user
+
+    @project = @user.projects.new(project_params)
     authorize @project
 
     respond_to do |format|

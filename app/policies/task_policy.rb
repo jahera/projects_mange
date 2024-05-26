@@ -12,7 +12,7 @@ class TaskPolicy < ApplicationPolicy
   end
 
   def update?
-    user.has_role?('admin') || user.has_role?('project_manager')
+    user.has_role?('admin') || user.has_role?('project_manager')|| user.has_role?('team_member')
   end
 
   def destroy?

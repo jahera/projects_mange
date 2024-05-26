@@ -6,7 +6,7 @@ class Admin::DashboardController < ApplicationController
   end
 
   def tenant_dashboard
-    @tenants = Tenant.all
-    authorize @tenants
+    # @tenants = Tenant.all
+    # authorize @tenants
   end
 end

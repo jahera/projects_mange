@@ -1,18 +1,18 @@
 class TenantPolicy < ApplicationPolicy
   def index?
-    user.has_role?('admin') || user.has_role?('tenant_admin')
+    user.has_role?('tenant_admin')
   end
 
-  def show?
-    user.has_role?('tenant_admin') || (user.has_role?('admin') && user.tenant == record)
+  def new?
+    user.has_role?('tenant_admin')
   end
 
   def create?
     user.has_role?('tenant_admin')
   end
 
-  def update?
-    user.has_role?('tenant_admin') || (user.has_role?('admin') && user.tenant == record)
+  def show?
+    user.has_role?('tenant_admin')
   end
 
   def destroy?

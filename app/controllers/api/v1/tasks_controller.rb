@@ -38,7 +38,11 @@ class Api::V1::TasksController < Api::V1::BaseController
   def destroy
   	authorize @task 
     @task.destroy
-    head :no_content
+    if @task.destroy!
+      render json: { message: 'Task was successfully deleted.' }, status: "200"
+    else
+      render json: @project.errors, status: :unprocessable_entity
+    end
   end
 
   private

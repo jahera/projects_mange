@@ -24,7 +24,12 @@
 
   <div class="field">
     <%= f.label :role %>
-    <%= f.collection_select :user_role_id, UserRole.all, :id, :role_type %>
+    <%= f.collection_select :tenant_id, Tenant.all, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :role %>
+    <%= f.collection_select :user_role_id, UserRole.where(role_type: ['admin', 'project_manager', 'team_member']), :id, :role_type %>
   </div>
 
   <div class="actions">

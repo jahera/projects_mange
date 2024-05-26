@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   end
 
   namespace :tenant_admin do
+    root "tenants#index"
+    resources :tenants, only: %i[new create show]
     get 'dashboard', to: 'dashboard#index'
     get 'users_list', to: 'dashboard#users_list'
     get 'projects_list', to: 'dashboard#projects_list'

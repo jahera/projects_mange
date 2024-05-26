@@ -45,6 +45,11 @@
             </div>
 
             <div class="mb-3">
+              <%= form.label :user_id %>
+              <%= form.collection_select :user_id, UserRole.is_admin&.users, :id, :email, {include_blank: true, class: 'form-control'} %>
+            </div>
+
+            <div class="mb-3">
               <%= form.label :status, class: 'form-label' %>
               <%= form.select(:status, ["new", "inprogress", "complete"], include_blank: false, class: 'form-control') %>
             </div>

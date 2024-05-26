@@ -51,5 +51,15 @@ class ApplicationController < ActionController::Base
     @current_tenant
   end
 
+  def after_sign_in_path_for(resource)
+    if current_user.has_role?('tenant_admin')
+      tenant_admin_root_path
+    elsif current_user.has_role?('admin')
+      admin_root_path
+    else
+      root_path
+    end
+  end
+
   helper_method :current_tenant
 end
